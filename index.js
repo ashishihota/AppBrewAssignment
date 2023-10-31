@@ -1,5 +1,4 @@
 const express = require("express");
-const helmet = require("helmet");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const routes  = require("./App/Routes/routes")
@@ -22,7 +21,6 @@ database.once("connected", () => {
 })
 
 app.use(express.json());
-app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routes)
 
