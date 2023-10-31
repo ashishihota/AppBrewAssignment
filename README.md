@@ -1,5 +1,7 @@
 # AppBrewAssignment
     The entry point of this project is the index.js file.
+    Link -> https://appbrew-rn27.onrender.com
+    ex -> https://appbrew-rn27.onrender.com/api/book
 
 ## How this project is setup
     The Tech Stack used in this project is NodeJs with Express and MongoDb with Mongoose. 
