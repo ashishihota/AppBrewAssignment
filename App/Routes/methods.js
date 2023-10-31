@@ -25,6 +25,13 @@ const AddBook = async (req, res) => {
       .status(400)
       .json({ msg: "Please provide Title, Desc and Author" });
   }
+  const alreadyExist = await Book.findOne({"title" : req.body.title});
+  if (alreadyExist != null){
+    return res.status(400).json({msg : "This book already exists in our database."})
+  }
+  if (alreadyExist != null) {
+    return res.status(400, )
+  }
   const book = new Book({
     title: req.body.title,
     desc: req.body.desc,
@@ -32,8 +39,8 @@ const AddBook = async (req, res) => {
   });
 
   try {
-    const savedBook = await book.save();
-    res.status(201).json({ savedBook });
+    await book.save();
+    res.status(201).json({msg: "Book was successfully added." });
   } catch (err) {
     res.statur(400).json({ message: error.message });
   }
